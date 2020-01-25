@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>riceteacatpanda</title>
+    <url>/2020/01/21/riceteacatpanda-ctf/</url>
+    <content><![CDATA[<p>寒假闲来无事，还是想提高一下姿势水平，就打打 <a href="https://ctftime.org/event/910" target="_blank" rel="noopener">riceteacatpanda</a> ctf玩玩咯</p>
+<a id="more"></a>
+
+<h2 id="Robots-Yeah-I-know-pretty-obvious"><a href="#Robots-Yeah-I-know-pretty-obvious" class="headerlink" title="Robots. Yeah, I know, pretty obvious."></a>Robots. Yeah, I know, pretty obvious.</h2><p>打开题目啥也没有，只有题目描述</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">So, we know that Delphine is a cook. A wonderful one, at that. But did you know that GIANt used to make robots? Yeah, GIANt robots.</span><br></pre></td></tr></table></figure>
+
+<p>不得不说，这个比赛是真的奇怪，web题的容器都没有…</p>
+<p>一开始以为是社工题，在google上搜了好久的GIANt,但是无果</p>
+<p>也是自己傻，以后看到robots就直接看网站的robots.txt得了</p>
+<p>在url中输入 <a href="https://riceteacatpanda.wtf/robots.txt" target="_blank" rel="noopener">https://riceteacatpanda.wtf/robots.txt</a></p>
+<p>发现果然有robots页面，显示如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow: </span><br><span class="line">&#x2F;robot-nurses</span><br><span class="line">&#x2F;flag</span><br></pre></td></tr></table></figure>
+
+<p>看到/flag就很兴奋了，但点进去只有一段视频…</p>
+<p>那就试试/robot-nurses，果然在</p>
+<p> <a href="https://riceteacatpanda.wtf/robot-nurses" target="_blank" rel="noopener">https://riceteacatpanda.wtf/robot-nurses</a></p>
+<p>找到了flag</p>
+<p>这里复习一下robots.txt内容</p>
+<p> <strong>robots.txt</strong>（统一小写）是一种存放于<a href="https://zh.wikipedia.org/wiki/网站" target="_blank" rel="noopener">网站</a>根目录下的<a href="https://zh.wikipedia.org/wiki/ASCII" target="_blank" rel="noopener">ASCII</a>编码的<a href="https://zh.wikipedia.org/wiki/文本文件" target="_blank" rel="noopener">文本文件</a>，它通常告诉网络<a href="https://zh.wikipedia.org/wiki/搜索引擎" target="_blank" rel="noopener">搜索引擎</a>的漫游器（又称<a href="https://zh.wikipedia.org/wiki/网络蜘蛛" target="_blank" rel="noopener">网络蜘蛛</a>），此网站中的哪些内容是不应被搜索引擎的漫游器获取的，哪些是可以被漫游器获取的。因为一些系统中的URL是大小写敏感的，所以robots.txt的文件名应统一为小写。robots.txt应放置于网站的根目录下。如果想单独定义搜索引擎的漫游器访问子目录时的行为，那么可以将自定的设置合并到根目录下的robots.txt，或者使用robots<a href="https://zh.wikipedia.org/wiki/元数据" target="_blank" rel="noopener">元数据</a>（Metadata，又称元数据）。</p>
+<p>例子： </p>
+<p>允许所有的机器人：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow:</span><br></pre></td></tr></table></figure>
+
+<p>另一写法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Allow:&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>仅允许特定的机器人：（name_spider用真实名字代替）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">User-agent: name_spider</span><br><span class="line">Allow:</span><br></pre></td></tr></table></figure>
+
+<p>拦截所有的机器人：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow: &#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>禁止所有机器人访问特定目录：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow: &#x2F;cgi-bin&#x2F;</span><br><span class="line">Disallow: &#x2F;images&#x2F;</span><br><span class="line">Disallow: &#x2F;tmp&#x2F;</span><br><span class="line">Disallow: &#x2F;private&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>仅禁止坏爬虫访问特定目录（BadBot用真实的名字代替）：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">User-agent: BadBot</span><br><span class="line">Disallow: &#x2F;private&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>禁止所有机器人访问特定文件类型：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow: &#x2F;*.php$</span><br><span class="line">Disallow: &#x2F;*.js$</span><br><span class="line">Disallow: &#x2F;*.inc$</span><br><span class="line">Disallow: &#x2F;*.css$</span><br></pre></td></tr></table></figure>
+
+<h2 id="No-Sleep"><a href="#No-Sleep" class="headerlink" title="No Sleep"></a>No Sleep</h2><p>打开Hint里的链接</p>
+<p> <a href="https://riceteacatpanda.wtf/onlyrealgamers" target="_blank" rel="noopener">https://riceteacatpanda.wtf/onlyrealgamers</a> </p>
+<p>发现页面中出现一个倒计时，显示一直到比赛结束才能看到flag。</p>
+<p>这类题目还是见过很多了，果断F12，发现一段被混淆过的js代码非常可疑</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> _0x1d8e=[<span class="string">'gamerfuel=Jan\x2027,\x202020\x2004:20:00'</span>,<span class="string">'Jan\x2027,\x202020\x2004:20:00'</span>,<span class="string">'getTime'</span>,<span class="string">'exec'</span>,<span class="string">'floor'</span>,<span class="string">'getElementById'</span>,<span class="string">'gamer\x20timer'</span>,<span class="string">'AES'</span>,<span class="string">'decrypt'</span>,<span class="string">'U2FsdGVkX18kRm6FDkRVQfVuNPTxyOnJzpu8QnI/9UKoCXp6hQcley11nBnLIItj'</span>,<span class="string">'ok\x20boomer'</span>,<span class="string">'innerHTML'</span>,<span class="string">'Utf8'</span>,<span class="string">'cookie'</span>];(<span class="function"><span class="keyword">function</span>(<span class="params">_0x29eed8,_0x4bb4aa</span>)</span>&#123;<span class="keyword">var</span> _0x47e29c=<span class="function"><span class="keyword">function</span>(<span class="params">_0x2d3fd2</span>)</span>&#123;<span class="keyword">while</span>(--_0x2d3fd2)&#123;_0x29eed8[<span class="string">'push'</span>](_0x29eed8[<span class="string">'shift'</span>]());&#125;&#125;;_0x47e29c(++_0x4bb4aa);&#125;(_0x1d8e,<span class="number">0x99</span>));<span class="keyword">var</span> _0x2ad1=<span class="function"><span class="keyword">function</span>(<span class="params">_0x545e19,_0x47cdd3</span>)</span>&#123;_0x545e19=_0x545e19<span class="number">-0x0</span>;<span class="keyword">var</span> _0x4275c2=_0x1d8e[_0x545e19];<span class="keyword">return</span> _0x4275c2;&#125;;<span class="built_in">document</span>[_0x2ad1(<span class="string">'0x0'</span>)]=_0x2ad1(<span class="string">'0x1'</span>);<span class="keyword">var</span> countDownDate=<span class="keyword">new</span> <span class="built_in">Date</span>(_0x2ad1(<span class="string">'0x2'</span>))[_0x2ad1(<span class="string">'0x3'</span>)]();<span class="keyword">var</span> x=setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> _0x27a8c6=<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="regexp">/[^=]*$/</span>[_0x2ad1(<span class="string">'0x4'</span>)](<span class="built_in">document</span>[_0x2ad1(<span class="string">'0x0'</span>)])[<span class="number">0x0</span>])[_0x2ad1(<span class="string">'0x3'</span>)]();<span class="keyword">var</span> _0x5b92f1=<span class="keyword">new</span> <span class="built_in">Date</span>()[<span class="string">'getTime'</span>]();<span class="keyword">var</span> _0x3a5a33=_0x27a8c6-_0x5b92f1;<span class="keyword">var</span> _0x4214a2=<span class="built_in">Math</span>[_0x2ad1(<span class="string">'0x5'</span>)](_0x3a5a33/(<span class="number">0x3e8</span>*<span class="number">0x3c</span>*<span class="number">0x3c</span>*<span class="number">0x18</span>));<span class="keyword">var</span> _0x48c0d9=<span class="built_in">Math</span>[_0x2ad1(<span class="string">'0x5'</span>)](_0x3a5a33%(<span class="number">0x3e8</span>*<span class="number">0x3c</span>*<span class="number">0x3c</span>*<span class="number">0x18</span>)/(<span class="number">0x3e8</span>*<span class="number">0x3c</span>*<span class="number">0x3c</span>));<span class="keyword">var</span> _0x2de271=<span class="built_in">Math</span>[_0x2ad1(<span class="string">'0x5'</span>)](_0x3a5a33%(<span class="number">0x3e8</span>*<span class="number">0x3c</span>*<span class="number">0x3c</span>)/(<span class="number">0x3e8</span>*<span class="number">0x3c</span>));<span class="keyword">var</span> _0x240ffb=<span class="built_in">Math</span>[<span class="string">'floor'</span>](_0x3a5a33%(<span class="number">0x3e8</span>*<span class="number">0x3c</span>)/<span class="number">0x3e8</span>);<span class="built_in">document</span>[_0x2ad1(<span class="string">'0x6'</span>)](_0x2ad1(<span class="string">'0x7'</span>))[<span class="string">'innerHTML'</span>]=_0x4214a2+<span class="string">'d\x20'</span>+_0x48c0d9+<span class="string">'h\x20'</span>+_0x2de271+<span class="string">'m\x20'</span>+_0x240ffb+<span class="string">'s\x20'</span>;<span class="keyword">if</span>(_0x3a5a33&lt;<span class="number">0x0</span>)&#123;clearInterval(x);<span class="keyword">var</span> _0x1018af=CryptoJS[_0x2ad1(<span class="string">'0x8'</span>)][_0x2ad1(<span class="string">'0x9'</span>)](_0x2ad1(<span class="string">'0xa'</span>),_0x2ad1(<span class="string">'0xb'</span>));<span class="built_in">document</span>[_0x2ad1(<span class="string">'0x6'</span>)](_0x2ad1(<span class="string">'0x7'</span>))[_0x2ad1(<span class="string">'0xc'</span>)]=_0x1018af[<span class="string">'toString'</span>](CryptoJS[<span class="string">'enc'</span>][_0x2ad1(<span class="string">'0xd'</span>)]);&#125;&#125;,<span class="number">0x3e8</span>);</span><br></pre></td></tr></table></figure>
+
+<p>拿到js反混淆网站 <a href="https://tool.lu/js/" target="_blank" rel="noopener">https://tool.lu/js/</a> 做一下反混淆后就基本能看了</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> _0x1d8e = <span class="string">"gamerfuel=Jan 27, 2020 04:20:00;Jan 27, 2020 04:20:00;getTime;exec;floor;getElementById;gamer timer;AES;decrypt;U2FsdGVkX18kRm6FDkRVQfVuNPTxyOnJzpu8QnI/9UKoCXp6hQcley11nBnLIItj;ok boomer;innerHTML;Utf8;cookie"</span>.split(<span class="string">";"</span>);</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (b = ++b; --b;) a.push(a.shift())</span><br><span class="line">&#125;)(_0x1d8e, <span class="number">153</span>);</span><br><span class="line"><span class="keyword">var</span> _0x2ad1 = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> _0x1d8e[a - <span class="number">0</span>]</span><br><span class="line">	&#125;;</span><br><span class="line"><span class="built_in">document</span>[_0x2ad1(<span class="string">"0x0"</span>)] = _0x2ad1(<span class="string">"0x1"</span>);</span><br><span class="line"><span class="keyword">var</span> countDownDate = (<span class="keyword">new</span> <span class="built_in">Date</span>(_0x2ad1(<span class="string">"0x2"</span>)))[_0x2ad1(<span class="string">"0x3"</span>)](),</span><br><span class="line">	x = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> a = (<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="regexp">/[^=]*$/</span> [_0x2ad1(<span class="string">"0x4"</span>)](<span class="built_in">document</span>[_0x2ad1(<span class="string">"0x0"</span>)])[<span class="number">0</span>]))[_0x2ad1(<span class="string">"0x3"</span>)](),</span><br><span class="line">			b = (<span class="keyword">new</span> <span class="built_in">Date</span>).getTime();</span><br><span class="line">		a -= b;</span><br><span class="line">		b = <span class="built_in">Math</span>[_0x2ad1(<span class="string">"0x5"</span>)](a / <span class="number">864E5</span>);</span><br><span class="line">		<span class="keyword">var</span> c = <span class="built_in">Math</span>[_0x2ad1(<span class="string">"0x5"</span>)](a % <span class="number">864E5</span> / <span class="number">36E5</span>),</span><br><span class="line">			d = <span class="built_in">Math</span>[_0x2ad1(<span class="string">"0x5"</span>)](a % <span class="number">36E5</span> / <span class="number">6E4</span>),</span><br><span class="line">			e = <span class="built_in">Math</span>.floor(a % <span class="number">6E4</span> / <span class="number">1E3</span>);</span><br><span class="line">		<span class="built_in">document</span>[_0x2ad1(<span class="string">"0x6"</span>)](_0x2ad1(<span class="string">"0x7"</span>)).innerHTML = b + <span class="string">"d "</span> + c + <span class="string">"h "</span> + d + <span class="string">"m "</span> + e + <span class="string">"s "</span>;</span><br><span class="line">		<span class="number">0</span> &gt; a &amp;&amp; (clearInterval(x), a = CryptoJS[_0x2ad1(<span class="string">"0x8"</span>)][_0x2ad1(<span class="string">"0x9"</span>)](_0x2ad1(<span class="string">"0xa"</span>), _0x2ad1(<span class="string">"0xb"</span>)), <span class="built_in">document</span>[_0x2ad1(<span class="string">"0x6"</span>)](_0x2ad1(<span class="string">"0x7"</span>))[_0x2ad1(<span class="string">"0xc"</span>)] = a.toString(CryptoJS.enc[_0x2ad1(<span class="string">"0xd"</span>)]))</span><br><span class="line">	&#125;, <span class="number">1E3</span>);</span><br></pre></td></tr></table></figure>
+
+<p>审计这段代码，大概流程是</p>
+<ol>
+<li><p>变量_0x1d8e通过split方法提供一个字符数组给下面的function使用</p>
+</li>
+<li><p>在function中，依次通过0x0,0x1,0x2…调用数组中的值</p>
+</li>
+<li><p>关键在于这一段</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>[_0x2ad1(<span class="string">"0x0"</span>)] = _0x2ad1(<span class="string">"0x1"</span>);</span><br><span class="line"><span class="keyword">var</span> countDownDate = (<span class="keyword">new</span> <span class="built_in">Date</span>(_0x2ad1(<span class="string">"0x2"</span>)))[_0x2ad1(<span class="string">"0x3"</span>)](),</span><br></pre></td></tr></table></figure>
+
+<p>取了0x0 = gamerfuel=Jan 27, 2020 04:20:00 </p>
+<p>​        0x1= Jan 27, 2020 04:20:00</p>
+<p>​        0x2 = getTime</p>
+<p>​        0x3 = exec</p>
+<p>其中的时间很明显就是最终的时间，那么直接在控制台里修改这段命令，将</p>
+<p>_0x1d8e改为</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> _0x1d8e = <span class="string">"gamerfuel=Jan 21, 2020 04:20:00;Jan 27, 2020 04:20:00;getTime;exec;floor;getElementById;gamer timer;AES;decrypt;U2FsdGVkX18kRm6FDkRVQfVuNPTxyOnJzpu8QnI/9UKoCXp6hQcley11nBnLIItj;ok boomer;innerHTML;Utf8;cookie"</span>.split(<span class="string">";"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>拿到flag</p>
+</li>
+</ol>
+<h2 id="Phishing-for-Flags"><a href="#Phishing-for-Flags" class="headerlink" title="Phishing for Flags"></a>Phishing for Flags</h2><h2 id="Uwu"><a href="#Uwu" class="headerlink" title="Uwu?"></a>Uwu?</h2><h2 id="What’s-in-The-Box"><a href="#What’s-in-The-Box" class="headerlink" title="What’s in The Box?!"></a>What’s in The Box?!</h2><h2 id="Web-Invaders"><a href="#Web-Invaders" class="headerlink" title="Web Invaders"></a>Web Invaders</h2><h2 id="growls-at-the-chicken"><a href="#growls-at-the-chicken" class="headerlink" title="growls at the chicken"></a><em>growls at the chicken</em></h2>]]></content>
+      <tags>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>First Blog</title>
     <url>/2020/01/19/First-Blog/</url>
     <content><![CDATA[<h1 id="Hexo搭建属于自己的博客"><a href="#Hexo搭建属于自己的博客" class="headerlink" title="Hexo搭建属于自己的博客"></a>Hexo搭建属于自己的博客</h1><p>转载：</p>
